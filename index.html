@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WhatsApp Unban Tool</title>
+  <style>
+    body {
+      font-family: 'Noto Nastaliq Urdu', Tahoma, sans-serif;
+      background: linear-gradient(135deg, #000000, #1a1a1a, #333333);
+      color: white;
+      text-align: center;
+      padding: 50px;
+      direction: rtl;
+    }
+    .box {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 30px;
+      border-radius: 20px;
+      max-width: 500px;
+      margin: auto;
+      box-shadow: 0 0 25px rgba(0,0,0,0.8);
+    }
+    input, button {
+      padding: 12px;
+      margin: 10px 0;
+      width: 80%;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+    input {
+      background: #fff;
+      color: #000;
+      text-align: left;
+    }
+    button {
+      background: #ff0000;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #cc0000;
+    }
+    a {
+      color: #00ffe7;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h1>🚀 واٹس ایپ ان بین ٹول</h1>
+    <p>اپنا ای میل درج کریں اور نیچے سے کاپی کریں:</p>
+    <input type="text" id="email" placeholder="ای میل یہاں لکھیں">
+    <button onclick="generateMail()">میل فارمیٹ کاپی کریں</button>
+    <p id="result" style="margin-top:20px;"></p>
+    
+    <hr style="margin: 20px 0; border: 1px solid #555;">
+    
+    <h2>📢 ہمارے چینل کو جوائن کریں</h2>
+    <a href="https://whatsapp.com/channel/0029VbAjse5B4hdObt2BdE2u" target="_blank">👉 یہاں کلک کریں</a>
+  </div>
+
+  <script>
+    function generateMail() {
+      let email = document.getElementById("email").value;
+      if(email === "") {
+        alert("براہ کرم اپنا ای میل درج کریں!");
+        return;
+      }
+      let text = `محترم واٹس ایپ ٹیم،\n\nمیرا نمبر غلطی سے بین کر دیا گیا ہے، براہ کرم اسے ریویو کریں اور ان بین کریں۔\n\nمیرا ای میل: ${email}\n\nشکریہ۔`;
+      
+      navigator.clipboard.writeText(text).then(() => {
+        document.getElementById("result").innerHTML = "✅ میل فارمیٹ کاپی ہو گیا!";
+      });
+    }
+  </script>
+
+</body>
+</html>
